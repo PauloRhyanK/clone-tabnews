@@ -4,16 +4,16 @@
   "description": "Estudo do repositorio tabbnews para estudo do curso.dev de Filipe Deschamps, onde estamos criando um projeto do 0",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run services:up && next dev",
     "build": "next build",
     "start": "next start",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
     "test": "jest",
-    "test:watch": "jest --watchAll",
-    "docker up": "docker compose -f infra/compose.yaml up -d",
-    "docker up watch": "docker compose -f infra/compose.yaml up",
-    "docker down": "docker compose -f infra/compose.yaml down"
+    "test:watch": "jest --watch",
+    "services:up": "docker compose -f infra/compose.yaml up -d",
+    "services:stop": "docker compose -f infra/compose.yaml stop",
+    "services:down": "docker compose -f infra/compose.yaml down"
   },
   "repository": {
     "type": "git",
